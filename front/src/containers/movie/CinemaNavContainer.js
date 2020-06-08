@@ -5,7 +5,7 @@ import CinemaNav from '../../components/movie/CinemaNav';
 import CinemaList from '../../components/movie/CinemaList';
 import { useDispatch, useSelector } from 'react-redux';
 import { getListByCinema } from '../../modules/cinema';
-import { crawlUpdate } from '../../modules/update';
+import {  update } from '../../modules/update';
 import { insertAlarm } from '../../modules/alarm';
 import { pushAlarm } from '../../modules/push';
 import { check } from '../../modules/user';
@@ -40,7 +40,7 @@ const CinemaNavContainer = () => {
   //크롤링 update버튼
   const onUpdate = useCallback(() => {
     try {
-      dispatch(crawlUpdate());
+      dispatch(update());
     } catch (error) {
       console.log(error);
     }

@@ -9,6 +9,7 @@ import posts, { postsSaga } from './posts';
 import list,{ listSaga } from './cinema';
 import token,{ tokenSaga } from './alarm';
 import push,{ PushSaga } from './push';
+import update, { UpdateSaga } from './update';
 
 const rootReducer = combineReducers({
   auth,
@@ -19,11 +20,12 @@ const rootReducer = combineReducers({
   posts,
   list,
   token,
-  push
+  push,
+  update
 });
 
 export function* rootSaga() {
-  yield all([authSaga(), userSaga(), writeSaga(), postSaga(), postsSaga(),listSaga(),tokenSaga(),PushSaga()]);
+  yield all([authSaga(), userSaga(), writeSaga(), postSaga(), postsSaga(),listSaga(),tokenSaga(),PushSaga(),UpdateSaga()]);
 }
 
 export default rootReducer;

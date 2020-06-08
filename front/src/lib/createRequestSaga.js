@@ -15,7 +15,6 @@ export default function createRequestSaga(type, request) {
     yield put(startLoading(type)); // 로딩 시작
     try {
       const response = yield call(request, action.payload);
-      console.log(response);
       if (
         response.status === 200 &&
         response.config.url === '/api/movie/updateAll'
@@ -26,7 +25,6 @@ export default function createRequestSaga(type, request) {
         response.status === 200 &&
         response.config.url === '/api/alarm/message'
       ) {
-        console.log('hi');
         alert('알림 푸쉬 완료');
       }
       yield put({

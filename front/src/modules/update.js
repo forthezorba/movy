@@ -8,7 +8,7 @@ import { takeLatest } from 'redux-saga/effects';
 const [UPDATE, UPDATE_SUCCESS, UPDATE_FAILURE] = createRequestActionTypes(
   'crawl/UPDATE_LIST',
 );
-export const crawlUpdate = createAction(UPDATE);
+export const update = createAction(UPDATE);
 
 const updateCrawlSaga = createRequestSaga(UPDATE, API.crawlUpdate);
 

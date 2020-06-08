@@ -1,14 +1,12 @@
- import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import fcm from '../fcm';
 import firebase from 'firebase';
 import { insertToken } from '../modules/alarm';
 
-function CreateFCM (){
-  console.log('랜더링')
+function CreateFCM() {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log('useEffect inserToken');
     firebase.initializeApp(fcm.config);
     const messaging = firebase.messaging();
     let token = '';
@@ -47,8 +45,6 @@ function CreateFCM (){
     });
   }, [dispatch]);
   return <div></div>;
-};
+}
 
 export default React.memo(CreateFCM);
- 
-
